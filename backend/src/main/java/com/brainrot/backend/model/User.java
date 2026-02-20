@@ -1,9 +1,6 @@
 package com.brainrot.backend.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 
@@ -25,4 +22,9 @@ public class User {
 
     @Column(nullable = false,unique = true)
     private String email;
+
+    //mappedBy = "I have a field, but I don’t own the FK"->user_id as FK in profile
+    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
+    private Profile profile;
+
 }
