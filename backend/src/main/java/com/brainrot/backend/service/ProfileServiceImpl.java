@@ -61,8 +61,16 @@ public class ProfileServiceImpl implements ProfileService{
         return mapToDTO(profile);
     }
 
+    //#3
     @Override
-    public ProfileDTO updateProfile(Long userId, ProfileDTO profileDTO) {
-        return null;
+    public ProfileDTO updateProfile(Long userId, ProfileDTO dto) {
+        Profile profile=profileRepository.findByUserId(userId)
+                .orElseThrow(()->new RuntimeException("Profile not Found!"));
+
+        profile.setBio(dto.getBio());
+        profile.setProfilePictureUrl(dto.getProfilePictureUrl());
+
+        profile=profileRepository.save(profile);
+        return mapToDTO(profile);
     }
 }
