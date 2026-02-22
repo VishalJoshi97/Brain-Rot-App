@@ -18,7 +18,7 @@ public class Profile {
 
     private String profilePictureUrl;
 
-    private int totalCore;
+    private int totalScore;
 
     @OneToOne
     @JoinColumn(name = "user_id",nullable = false,unique = true)
