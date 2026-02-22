@@ -14,8 +14,10 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
+    //create user and save into db
     @Override
     public UserDTO createUser(UserDTO dto) {
+        //instead of setter
         User user = User.builder()
                 .email(dto.getEmail())
                 .name(dto.getName())
@@ -25,6 +27,8 @@ public class UserServiceImpl implements UserService {
         return new UserDTO(user.getId(), user.getEmail(), user.getName() );
     }
 
+
+    //get user info from db
     @Override
     public List<UserDTO> getAllUsers() {
         return userRepository.findAll()
