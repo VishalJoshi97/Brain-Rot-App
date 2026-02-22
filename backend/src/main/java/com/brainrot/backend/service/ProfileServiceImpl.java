@@ -16,6 +16,19 @@ public class ProfileServiceImpl implements ProfileService{
     private final ProfileRepository profileRepository;
     private final UserRepository userRepository;
 
+
+    private ProfileDTO mapToDTO(Profile profile){
+        return ProfileDTO.builder()
+                .id(profile.getId())
+                .bio(profile.getBio())
+                .profilePictureUrl(profile.getProfilePictureUrl())
+                .totalScore(profile.getTotalScore())
+                .userId(profile.getUser().getId())
+                .build();
+    }
+
+
+
     @Override
     public ProfileDTO createProfile(ProfileDTO dto) {
         //setter
