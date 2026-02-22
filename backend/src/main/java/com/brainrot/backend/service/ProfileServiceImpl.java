@@ -17,6 +17,7 @@ public class ProfileServiceImpl implements ProfileService{
     private final UserRepository userRepository;
 
 
+    //must do Models to dto type conversion
     private ProfileDTO mapToDTO(Profile profile){
         return ProfileDTO.builder()
                 .id(profile.getId())
@@ -28,7 +29,7 @@ public class ProfileServiceImpl implements ProfileService{
     }
 
 
-
+    //#1
     @Override
     public ProfileDTO createProfile(ProfileDTO dto) {
         //setter
@@ -50,9 +51,14 @@ public class ProfileServiceImpl implements ProfileService{
                 profile.getUser().getId());
     }
 
+
+    //#2
     @Override
     public ProfileDTO getProfileByUserId(Long userId) {
-        return null;
+
+        Profile profile=profileRepository.findByUserId(userId)
+                .orElseThrow(()->new RuntimeException("Profile not Found!"));
+        return mapToDTO(profile);
     }
 
     @Override
