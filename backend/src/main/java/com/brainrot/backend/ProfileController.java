@@ -19,4 +19,11 @@ public class ProfileController {
     public ProfileDTO getProfile(@PathVariable Long userId) {
         return profileService.getProfileByUserId(userId);
     }
+  @PutMapping("/{userId}")
+    public ProfileDTO updateProfile(
+            @PathVariable Long userId,
+            @RequestBody ProfileDTO dto) {
+
+        return profileService.updateProfile(userId, dto);
+    }
 }
