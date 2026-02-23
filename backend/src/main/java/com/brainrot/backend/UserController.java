@@ -17,4 +17,8 @@ private final UserService userService;
     public UserDTO createUser(@RequestBody UserDTO userDTO) {
         return userService.createUser(userDTO);
     }
+    @GetMapping
+    public List<UserDTO> getUsers() {
+        return userService.getAllUsers();
+    }
 }
