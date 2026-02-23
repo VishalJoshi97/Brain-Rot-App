@@ -15,4 +15,8 @@ public class ProfileController {
     public ProfileDTO createProfile(@RequestBody ProfileDTO dto) {
         return profileService.createProfile(dto);
     }
+  @GetMapping("/{userId}")
+    public ProfileDTO getProfile(@PathVariable Long userId) {
+        return profileService.getProfileByUserId(userId);
+    }
 }
