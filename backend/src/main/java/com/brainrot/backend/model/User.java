@@ -2,7 +2,6 @@ package com.brainrot.backend.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
 @Entity
 @Getter @Setter

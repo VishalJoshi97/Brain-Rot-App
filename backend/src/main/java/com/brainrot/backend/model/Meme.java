@@ -19,7 +19,7 @@ public class Meme {
 
     private int likes;
 
-    @ManyToMany//many memes to one user
+    @ManyToOne//many memes to one user
     @JoinColumn(name="user_id")
     private User user;
 

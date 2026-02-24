@@ -1,7 +1,8 @@
-package com.brainrot.controller;
+package com.brainrot.backend.controller;
 
-import com.brainrot.dto.UserDTO;
-import com.brainrot.service.UserService;
+import com.brainrot.backend.service.UserService;
+import com.brainrot.backend.dto.UserDTO;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,7 @@
-package com.brainrot.controller;
+package com.brainrot.backend.controller;
 
-import com.brainrot.dto.ProfileDTO;
-import com.brainrot.service.ProfileService;
+import com.brainrot.backend.dto.ProfileDTO;
+import com.brainrot.backend.service.ProfileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
