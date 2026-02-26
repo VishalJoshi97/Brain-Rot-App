@@ -58,5 +58,11 @@ public class BrainRotTestServiceImpl implements BrainRotTestService {
         return new BrainRotTestResultDTO(score, level);
     }
 
+        private String calculateLevel(int score) {
+        if (score < 10) return "LOW";
+        if (score < 25) return "MEDIUM";
+        if (score < 40) return "HIGH";
+        return "CRITICAL";
+    }
  
 }
