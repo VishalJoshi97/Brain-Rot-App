@@ -85,9 +85,29 @@ export default function test() {
 
   const question = questions[currentIndex];
   
-  return (
-    <View>
-      <Text>Test</Text>
+return (
+    <View style={styles.container}>
+      <Text style={styles.progress}>
+        Question {currentIndex + 1}/{questions.length}
+      </Text>
+
+      <Text style={styles.question}>
+        {question.questionText}
+      </Text>
+
+      {["A", "B", "C", "D"].map((option) => (
+        <TouchableOpacity
+          key={option}
+          style={styles.option}
+          onPress={() =>
+            handleAnswer(question[`option${option}`])
+          }
+        >
+          <Text style={styles.optionText}>
+            {question[`option${option}`]}
+          </Text>
+        </TouchableOpacity>
+      ))}
     </View>
-  )
+  );
 }
