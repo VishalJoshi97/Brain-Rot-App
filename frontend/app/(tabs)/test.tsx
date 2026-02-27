@@ -68,6 +68,22 @@ export default function test() {
     }
   };
 
+  if (loading) return <ActivityIndicator size="large" />;
+
+  if (result) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.resultTitle}>
+          Brain Rot Score: {result.score}
+        </Text>
+        <Text style={styles.resultLevel}>
+          Level: {result.rotLevel}
+        </Text>
+      </View>
+    );
+  }
+
+  const question = questions[currentIndex];
   
   return (
     <View>
