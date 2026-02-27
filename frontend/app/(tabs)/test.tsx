@@ -111,3 +111,39 @@ return (
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#121212",
+    padding: 20,
+    justifyContent: "center",
+  },
+  progress: {
+    color: "#aaa",
+    marginBottom: 10,
+  },
+  question: {
+    color: "#fff",
+    fontSize: 20,
+    marginBottom: 20,
+  },
+  option: {
+    backgroundColor: "#1e1e1e",
+    padding: 15,
+    marginVertical: 8,
+    borderRadius: 10,
+  },
+  optionText: {
+    color: "#fff",
+  },
+  resultTitle: {
+    color: "#fff",
+    fontSize: 24,
+    marginBottom: 10,
+  },
+  resultLevel: {
+    color: "#00ff99",
+    fontSize: 20,
+  },
+});
