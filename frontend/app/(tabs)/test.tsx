@@ -1,5 +1,12 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  ActivityIndicator,
+} from "react-native";
+import { fetchQuestions, submitTest } from "../services/api";
 
 export default function test() {
   const [questions, setQuestions] = useState([]);
@@ -23,6 +30,45 @@ export default function test() {
       console.log(error);
     }
   };
+
+  const handleAnswer = (selectedOption) => {
+    const endTime = Date.now();
+    const responseTime = endTime - startTime;
+
+    const currentQuestion = questions[currentIndex];
+
+    setAnswers([
+      ...answers,
+      {
+        questionId: currentQuestion.id,
+        selectedAnswer: selectedOption,
+        responseTimeMillis: responseTime,
+      },
+    ]);
+
+    if (currentIndex + 1 < questions.length) {
+      setCurrentIndex(currentIndex + 1);
+      setStartTime(Date.now());
+    } else {
+      finishTest();
+    }
+  };
+
+  const finishTest = async () => {
+    try {
+      const payload = {
+        userId: 1, // replace with logged-in user id
+        answers: answers,
+      };
+
+      const res = await submitTest(payload);
+      setResult(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  
   return (
     <View>
       <Text>Test</Text>
