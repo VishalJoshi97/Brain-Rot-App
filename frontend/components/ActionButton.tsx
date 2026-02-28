@@ -8,3 +8,16 @@ export default function ActionButton({ title, onPress }) {
     </TouchableOpacity>
   );
 }
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: "#00ff99",
+    padding: 15,
+    borderRadius: 10,
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  text: {
+    fontWeight: "bold",
+  },
+});
