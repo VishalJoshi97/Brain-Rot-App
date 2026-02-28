@@ -10,3 +10,23 @@ export default function ScoreCard({ score, level }) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  card: {
+    backgroundColor: "#1e1e1e",
+    padding: 20,
+    borderRadius: 15,
+    marginBottom: 20,
+  },
+  title: {
+    color: "#aaa",
+    marginBottom: 5,
+  },
+  score: {
+    fontSize: 32,
+    color: "#00ff99",
+  },
+  level: {
+    color: "#fff",
+  },
+});
