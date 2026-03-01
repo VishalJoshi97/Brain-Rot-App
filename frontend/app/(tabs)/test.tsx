@@ -151,12 +151,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import ScoreCard from '@/components/ScoreCard'
+import ActionButton from '@/components/ActionButton'
 
 const test = () => {
   return (
     <View>
       <Text>test</Text>
-      <ScoreCard  />
+      <ScoreCard />
+      <ActionButton/>
     </View>
   )
 }
