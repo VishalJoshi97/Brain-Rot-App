@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function ScoreCard({ score, level }) {
+export default function ScoreCard({ score=1, level=4 }) {
   return (
     <View style={styles.card}>
       <Text style={styles.title}>🧠 Brain Rot Score</Text>

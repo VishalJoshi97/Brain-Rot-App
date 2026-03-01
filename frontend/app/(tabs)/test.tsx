@@ -150,11 +150,13 @@
 
 import { View, Text } from 'react-native'
 import React from 'react'
+import ScoreCard from '@/components/ScoreCard'
 
 const test = () => {
   return (
     <View>
       <Text>test</Text>
+      <ScoreCard  />
     </View>
   )
 }
