@@ -1,3 +1,4 @@
+@Tag(name = "Brain Rot Test", description = "Brain Rot Test APIs")
 @RestController
 @RequestMapping("/api/brainrot-test")
 @RequiredArgsConstructor
