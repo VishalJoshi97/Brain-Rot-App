@@ -8,13 +8,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SwaggerConfig {
 
-    @Bean
-    public OpenAPI brainRotOpenAPI() {
-
-        return new OpenAPI()
-                .info(new Info()
-                        .title("Brain Rot API")
-                        .description("API documentation for Brain Rot App Backend")
-                        .version("1.0"));
-    }
+   @Bean
+public OpenAPI brainRotOpenAPI() {
+    return new OpenAPI()
+            .info(new Info()
+                    .title("Brain Rot Backend API")
+                    .description("Backend services for Brain Rot social platform")
+                    .version("1.0")
+                    .contact(new io.swagger.v3.oas.models.info.Contact()
+                            .name("Brain Rot Team")
+                            .email("support@brainrot.app")));
+}
 }
