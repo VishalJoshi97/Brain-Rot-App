@@ -21,4 +21,13 @@ public class MemeController {
     public MemeDTO likeMeme(@PathVariable Long id) {
         return memeService.likeMeme(id);
     }
+
+    @GetMapping
+    public Page<MemeDTO> getMemes(
+        @RequestParam(defaultValue = "0") int page,
+        @RequestParam(defaultValue = "10") int size
+    ) {
+
+    return memeService.getMemes(page, size);
+    }
 }
