@@ -12,4 +12,6 @@ public interface MemeService {
 
     MemeDTO likeMeme(Long memeId);
 
+    Page<MemeDTO> getMemes(int page, int size);
+
 }
