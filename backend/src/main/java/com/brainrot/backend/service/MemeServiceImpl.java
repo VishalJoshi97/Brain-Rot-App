@@ -50,4 +50,22 @@ public class MemeServiceImpl implements MemeService {
                 meme.getImageUrl(),
                 meme.getLikes());
     }
+
+    @Override
+public Page<MemeDTO> getMemes(int page, int size) {
+
+    Pageable pageable = PageRequest.of(page, size);
+
+    Page<Meme> memes =
+            memeRepository.findAllByOrderByCreatedAtDesc(pageable);
+
+    return memes.map(m ->
+            new MemeDTO(
+                    m.getId(),
+                    m.getTitle(),
+                    m.getImageUrl(),
+                    m.getLikes()
+            )
+    );
+}
 }
