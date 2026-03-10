@@ -11,4 +11,5 @@ public interface MemeRepository extends JpaRepository<Meme,Long> {
 
     List<Meme> findAllByOrderByLikesDesc();
     Page<Meme> findAllByOrderByCreatedAtDesc(Pageable pageable);
+    List<Meme> findByUserId(Long userId);
 }
