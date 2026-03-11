@@ -28,6 +28,14 @@ public class MemeController {
         @RequestParam(defaultValue = "10") int size
     ) {
 
+     @GetMapping("/user/{userId}")
+    public List<MemeDTO> getUserMemes(
+        @PathVariable Long userId
+    ) {
+
+    return memeService.getUserMemes(userId);
+
+}
     return memeService.getMemes(page, size);
     }
 }
