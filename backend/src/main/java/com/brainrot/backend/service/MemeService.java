@@ -14,4 +14,6 @@ public interface MemeService {
 
     Page<MemeDTO> getMemes(int page, int size);
 
+    public List<MemeDTO> getUserMemes(Long userId);
+
 }
