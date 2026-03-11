@@ -68,4 +68,17 @@ public Page<MemeDTO> getMemes(int page, int size) {
             )
     );
 }
+    @Override
+public List<MemeDTO> getUserMemes(Long userId) {
+
+    return memeRepository
+            .findByUserId(userId)
+            .stream()
+            .map(m -> new MemeDTO(
+                    m.getId(),
+                    m.getTitle(),
+                    m.getImageUrl(),
+                    m.getLikes()))
+            .toList();
+}
 }
