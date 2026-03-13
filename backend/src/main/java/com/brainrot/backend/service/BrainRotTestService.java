@@ -1,7 +1,7 @@
 package com.brainrot.backend.service;
 
-import com.brainrot.dto.BrainRotTestRequestDTO;
-import com.brainrot.dto.BrainRotTestResultDTO;
+import com.brainrot.backend.dto.BrainRotTestRequestDTO;
+import com.brainrot.backend.dto.BrainRotTestResultDTO;
 
 public interface BrainRotTestService {
 
