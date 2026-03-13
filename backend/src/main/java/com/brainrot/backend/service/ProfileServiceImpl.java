@@ -17,7 +17,7 @@ public class ProfileServiceImpl implements ProfileService{
     private final UserRepository userRepository;
 
 
-    //must do Models to dto type conversion
+    //must do->Models to dto type conversion
     private ProfileDTO mapToDTO(Profile profile){
         return ProfileDTO.builder()
                 .id(profile.getId())
