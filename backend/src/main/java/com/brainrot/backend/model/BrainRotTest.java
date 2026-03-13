@@ -12,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "test")
 public class BrainRotTest {
 
     @Id
@@ -24,7 +25,8 @@ public class BrainRotTest {
     private LocalDateTime takenAt;
 
     @ManyToOne
-    private User user;
+    @JoinColumn(name = "user_id")
+    private User user;//full user details
 
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL)
     private List<BrainRotAnswer> answers;

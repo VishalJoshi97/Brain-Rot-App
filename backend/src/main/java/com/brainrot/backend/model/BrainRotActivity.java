@@ -3,7 +3,7 @@ package com.brainrot.backend.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
+@Entity(name = "activity")
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,6 +17,6 @@ public class BrainRotActivity {
     private int score;
 
     @ManyToOne//many activity to one user
-    @JoinColumn(name="user_id")
+    @JoinColumn(name="user_id")//only uer_id
     private User user;
 }

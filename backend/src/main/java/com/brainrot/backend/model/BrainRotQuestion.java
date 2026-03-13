@@ -3,7 +3,7 @@ package com.brainrot.backend.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
+@Entity(name = "question")
 @Getter
 @Setter
 @NoArgsConstructor
