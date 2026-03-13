@@ -24,6 +24,7 @@ public class UserServiceImpl implements UserService {
                 .build();
 
         user = userRepository.save(user);
+        //instead of getter
         return new UserDTO(user.getId(), user.getEmail(), user.getName() );
     }
 
