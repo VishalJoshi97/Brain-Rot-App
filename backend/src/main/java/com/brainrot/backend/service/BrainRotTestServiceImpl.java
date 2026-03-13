@@ -1,8 +1,8 @@
 package com.brainrot.backend.service;
 
-import com.brainrot.dto.*;
-import com.brainrot.model.*;
-import com.brainrot.repository.*;
+import com.brainrot.backend.dto.*;
+import com.brainrot.backend.model.*;
+import com.brainrot.backend.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +19,7 @@ public class BrainRotTestServiceImpl implements BrainRotTestService {
     @Override
     public BrainRotTestResultDTO submitTest(BrainRotTestRequestDTO request) {
 
+        //step 1: find id wrt entity and repo
         User user = userRepository.findById(request.getUserId())
                 .orElseThrow();
 
@@ -53,7 +54,7 @@ public class BrainRotTestServiceImpl implements BrainRotTestService {
                 .takenAt(LocalDateTime.now())
                 .build();
 
-        testRepository.save(test);
+       test=testRepository.save(test);
 
         return new BrainRotTestResultDTO(score, level);
     }
@@ -64,5 +65,4 @@ public class BrainRotTestServiceImpl implements BrainRotTestService {
         if (score < 40) return "HIGH";
         return "CRITICAL";
     }
- 
 }
